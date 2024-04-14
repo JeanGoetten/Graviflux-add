@@ -1,0 +1,43 @@
+Portal special level 
+Fantasmas que seguem do Mario
+Labirinto 
+Com tempo, mas não sabe ao certo quanto tempo pois há vários cronomêtros
+Que tem que usar a flag para destruir o inimigo 
+Que tem que usar a flag para empurrar o inimigo 
+Que se o inimigo pegar a flag antes de você, o level reseta 
+
+Palavra chave "game design"; "dificuldade"; "level design"; "apresentando mecânica"
+
+fase 0 - apresentando a mecânica: 
+
+obriga o jogador a usar os portais 
+
+fase 1 - necessidade: 
+
+obriga o jogador a usar os portais para escapar de uma ameaça ou superar um desafio 
+
+fase 2 - dificuldade: 
+
+dificulta para o jogador usar os portais para escapar de uma ameaça ou superar um desafio 
+
+fase 3 - reapresentando a mecânica: 
+
+obriga o jogador a usar os portais sequencialmente para ganhar impulso 
+
+fase 4 - nova necessidade: 
+
+obriga o jogador a usar os portais sequencialmente para escapar de uma ameça 
+
+fase 5 - nova dificuldade: 
+
+dificulta para o jogador usar os portais sequencialmente para escapar de uma ameaça 
+
+
+Fases possíveis: 
+
+Portal: usa portais 
+Impulso: pega impulso ao passar pelos portais sequencialmente
+Concorrente: o inimigo também pega a flag. 
+Ambicioso: quem pegar a flag primeiro, morre. (ela está vermelha)
+Invejoso: o inimigo segue você quando de costas. 
+Ansioso: usa algum tipo de cronômetro. 

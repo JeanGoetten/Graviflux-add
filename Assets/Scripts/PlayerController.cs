@@ -25,7 +25,9 @@ public class PlayerController : MonoBehaviour
 
     private bool onTravel;
 
-    private float portalForceIncrease; 
+    private float portalForceIncrease;
+
+    public GameObject goPwned; 
 
     private void Awake()
     {
@@ -41,7 +43,9 @@ public class PlayerController : MonoBehaviour
 
         onTravel = false;
 
-        portalForceIncrease = 1;
+        portalForceIncrease = 0f;
+
+        goPwned.SetActive(false);
     }
 
     private void Update()
@@ -81,8 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, 18.5f, transform.position.z);
         }
-
-        Debug.Log(aceleration); 
+        Debug.Log(rb.velocity.magnitude); 
     }
 
     void FixedUpdate()
@@ -96,8 +99,6 @@ public class PlayerController : MonoBehaviour
             horizontalInput = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
         }
-        
-
     }
 
     public void Reset()
@@ -114,11 +115,11 @@ public class PlayerController : MonoBehaviour
             Reset();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        if (other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Wall")
         {
             aceleration = 0f;
-        onTravel = false;
-        portalForceIncrease = 0f; 
+            onTravel = false;
+            portalForceIncrease = 0f;
         }
         
     }
@@ -131,13 +132,10 @@ public class PlayerController : MonoBehaviour
                 onTravel = true;
                 timeRec = 0;
                 portalForceIncrease++;
-                aceleration += (rb.velocity.magnitude / 5) * portalForceIncrease;
-                transform.position = new Vector2(portal_2.transform.position.x + 1.5f, portal_2.transform.position.y + 1);
+                aceleration += (rb.velocity.magnitude/5) * portalForceIncrease;
+                transform.position = new Vector2(portal_2.transform.position.x + 1.5f, portal_2.transform.position.y + 1.5f);
                 rb.velocity = new Vector2(aceleration, aceleration);
-                portalForceIncrease += 0.5f; 
             }
-            
-            
         }
         if (other.gameObject.tag == "Portal_2")
         {
@@ -147,10 +145,13 @@ public class PlayerController : MonoBehaviour
                 timeRec = 0;
                 portalForceIncrease++;
                 aceleration += (rb.velocity.magnitude/5) * portalForceIncrease;
-                transform.position = new Vector2(portal_1.transform.position.x + 1.5f, portal_1.transform.position.y + 1);
+                transform.position = new Vector2(portal_1.transform.position.x + 1.5f, portal_1.transform.position.y + 1.5f);
                 rb.velocity = new Vector2(aceleration, aceleration);
-                
             }
+        }
+        if(other.gameObject.tag == "PwnedByEnemy")
+        {
+            goPwned.SetActive(true);
         }
     }
 }

@@ -9,6 +9,9 @@ TagManager:
   - Portal_1
   - Portal_2
   - Ground
+  - Wall
+  - PwnedByPlayer
+  - PwnedByEnemy
   layers:
   - Default
   - TransparentFX
