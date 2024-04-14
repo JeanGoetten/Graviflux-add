@@ -99,6 +99,11 @@ MonoBehaviour:
   killEnemy: 0
   killedByEnemy: 0
   nextSceneName: 1
+  au: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: 482536dbfc7bdb74da42a66744802778, type: 3}
+  - {fileID: 8300000, guid: 832f0992e3f887240b1d84c01432fbf8, type: 3}
+  - {fileID: 8300000, guid: ea59003498f4d894f93c20d18685e071, type: 3}
 --- !u!1 &6324290104355691829
 GameObject:
   m_ObjectHideFlags: 0

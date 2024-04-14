@@ -6,6 +6,9 @@ TagManager:
   tags:
   - End
   - Enemy
+  - Portal_1
+  - Portal_2
+  - Ground
   layers:
   - Default
   - TransparentFX
