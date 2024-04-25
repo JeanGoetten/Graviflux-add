@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killEnemy: 0
   killedByEnemy: 0
-  nextSceneName: 2
+  nextSceneName: 5
   au: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: 482536dbfc7bdb74da42a66744802778, type: 3}

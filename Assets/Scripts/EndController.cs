@@ -13,6 +13,11 @@ public class EndController : MonoBehaviour
     public AudioSource au;
     public AudioClip[] clips;
 
+    private void Awake()
+    {
+        au = GameObject.Find("Canvas").GetComponent<AudioSource>();
+    }
+
     public void Reset()
     {
         Physics.gravity = new Vector3(0, -60, 0);

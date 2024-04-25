@@ -20,16 +20,12 @@ public class EnemyController : MonoBehaviour
     public float cdPortal = 1f;
     private float timeRec;
 
-    private bool onTravel;
-
     private float portalForceIncrease;
 
     private float aceleration;
 
     public GameObject portal_1;
     public GameObject portal_2;
-
-    public GameObject goPwned;
 
     void Awake()
     {
@@ -43,14 +39,10 @@ public class EnemyController : MonoBehaviour
 
         timeRec = 0;
 
-        onTravel = false;
-
         portalForceIncrease = 0f;
 
         portal_1 = GameObject.FindWithTag("Portal_1");
         portal_2 = GameObject.FindWithTag("Portal_2");
-
-        goPwned.SetActive(false);
     }
 
     void Update()
@@ -62,6 +54,7 @@ public class EnemyController : MonoBehaviour
         if (mobility)
         {
             rb.velocity = new Vector2(directionX * speed, rb.velocity.y);
+            transform.localScale = new Vector3(directionX * -1, transform.localScale.y, transform.localScale.z); // look at
         }
         else
         { // look at player
@@ -103,8 +96,11 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Wall")
         {
             aceleration = 0f;
-            onTravel = false;
             portalForceIncrease = 0f;
+        }
+        if (other.gameObject.tag == "FakeEnd")
+        {
+            Destroy(this.gameObject); 
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -115,7 +111,6 @@ public class EnemyController : MonoBehaviour
             {
                 if (timeRec > cdPortal)
                 {
-                    onTravel = true;
                     timeRec = 0;
                     portalForceIncrease++;
                     aceleration += (rb.velocity.magnitude / 5) * portalForceIncrease;
@@ -127,7 +122,6 @@ public class EnemyController : MonoBehaviour
             {
                 if (timeRec > cdPortal)
                 {
-                    onTravel = true;
                     timeRec = 0;
                     portalForceIncrease++;
                     aceleration += (rb.velocity.magnitude / 5) * portalForceIncrease;
@@ -135,11 +129,6 @@ public class EnemyController : MonoBehaviour
                     rb.velocity = new Vector2(aceleration, aceleration);
                 }
             }
-        }
-        
-        if (other.gameObject.tag == "PwnedByPlayer")
-        {
-            goPwned.SetActive(true);
         }
     }
 }

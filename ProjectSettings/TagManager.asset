@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - PwnedByPlayer
   - PwnedByEnemy
+  - FakeEnd
   layers:
   - Default
   - TransparentFX

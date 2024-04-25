@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2157.9302, g: 2260.9253, b: 3281.0288, a: 1}
+  m_IndirectSpecularColor: {r: 2263.135, g: 2404.5159, b: 3502.102, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5016,7 +5016,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9016741716784207299, guid: 1be236ced3b6cc241b64600b64d9cfb6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 1be236ced3b6cc241b64600b64d9cfb6, type: 3}
 --- !u!1001 &5178280319952047857
 PrefabInstance:
@@ -5036,6 +5040,11 @@ PrefabInstance:
       propertyPath: au
       value: 
       objectReference: {fileID: 1785469612}
+    - target: {fileID: 5538762923709638213, guid: af638233125ced743b33d7f0f0f497e7,
+        type: 3}
+      propertyPath: nextSceneName
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5538762923709638213, guid: af638233125ced743b33d7f0f0f497e7,
         type: 3}
       propertyPath: clips.Array.size

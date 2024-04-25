@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, 18.5f, transform.position.z);
         }
-        Debug.Log(rb.velocity.magnitude); 
+        //Debug.Log(rb.velocity.magnitude); 
     }
 
     void FixedUpdate()
@@ -120,6 +120,12 @@ public class PlayerController : MonoBehaviour
             aceleration = 0f;
             onTravel = false;
             portalForceIncrease = 0f;
+        }
+
+        if(other.gameObject.tag == "FakeEnd")
+        {
+            Reset();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2157.9302, g: 2260.9253, b: 3281.0288, a: 1}
+  m_IndirectSpecularColor: {r: 2262.555, g: 2404.0667, b: 3501.6802, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1506,6 +1506,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3659069689336421705, guid: 1cd1c364274b94c48aabf786493cc512,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.03
+      objectReference: {fileID: 0}
     - target: {fileID: 5110359152042830939, guid: 1cd1c364274b94c48aabf786493cc512,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3157,6 +3162,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6344984765489226589, guid: a552477317b8f95478ae1119bf9c6aec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848388548447910380, guid: a552477317b8f95478ae1119bf9c6aec,
+        type: 3}
+      propertyPath: mobility
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
 
-        level = 1;
     }
     private void Update()
     {
